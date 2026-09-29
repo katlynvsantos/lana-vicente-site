@@ -633,7 +633,9 @@ h3 {
 
 @media (min-width: 701px) {
   .contact-info .contact-button + .button.primary {
-    margin-top: 20px;
+    display: block;
+    width: fit-content;
+    margin-top: 15px;
   }
 }
 
@@ -774,14 +776,9 @@ footer {
 
 @media (max-width: 700px) {
 
-  /* FOTO LATERAL */
-
   .side-photo {
     display: none;
   }
-
-
-  /* TELA TODA */
 
   .header,
   main,
@@ -790,9 +787,6 @@ footer {
 
     width: 100%;
   }
-
-
-  /* CABEÇALHO */
 
   .header {
     min-height: 70px;
