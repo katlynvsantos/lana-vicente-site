@@ -1,0 +1,1011 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #D9EDF4;
+  --paper: #fffdf9;
+  --text: #2e2a27;
+  --muted: #756d65;
+  --accent: #8d7761;
+  --accent-dark: #665342;
+  --line: #ded4c8;
+}
+
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ================================
+   FOTO LATERAL
+================================ */
+
+.side-photo {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 31%;
+  height: 100vh;
+
+  overflow: hidden;
+  z-index: 0;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 65%,
+    rgba(0, 0, 0, 0.8) 78%,
+    rgba(0, 0, 0, 0.4) 88%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 65%,
+    rgba(0, 0, 0, 0.8) 78%,
+    rgba(0, 0, 0, 0.4) 88%,
+    transparent 100%
+  );
+}
+
+.side-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ================================
+   CONTEÚDO PRINCIPAL
+================================ */
+
+.header,
+main,
+footer {
+  position: relative;
+  margin-left: 31%;
+  width: 69%;
+}
+
+.header {
+  min-height: 80px;
+
+  padding: 0 clamp(25px, 4vw, 60px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  z-index: 10;
+}
+
+main {
+  overflow: hidden;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* ================================
+   MENU DESKTOP
+================================ */
+
+.desktop-nav {
+  display: flex;
+
+  gap: clamp(16px, 2.2vw, 35px);
+
+  font-size: clamp(.8rem, 1vw, 1rem);
+
+  white-space: nowrap;
+}
+
+.desktop-nav a {
+  transition: color .2s ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--accent);
+}
+
+
+/* ================================
+   INSTAGRAM DO CABEÇALHO
+================================ */
+
+.header > a:not(.logo):not(.header-button) {
+  transition: color .2s ease;
+}
+
+.header > a:not(.logo):not(.header-button):hover {
+  color: var(--accent);
+}
+
+
+/* ================================
+   BOTÕES
+================================ */
+
+.header-button,
+.button {
+  display: inline-block;
+
+  border-radius: 999px;
+
+  padding:
+    clamp(10px, 1vw, 13px)
+    clamp(16px, 1.5vw, 23px);
+
+  font-size: clamp(.78rem, .9vw, .95rem);
+
+  font-weight: 600;
+
+  transition: .2s ease;
+
+  white-space: nowrap;
+}
+
+.header-button,
+.button.primary {
+  background: var(--accent-dark);
+  color: white;
+}
+
+.header-button:hover,
+.button.primary:hover {
+  transform: translateY(-2px);
+  opacity: .92;
+}
+
+.button.secondary {
+  border: 1px solid var(--line);
+  background: transparent;
+}
+
+.button.secondary:hover {
+  background: var(--paper);
+}
+
+
+/* ================================
+   BOTÃO MENU MOBILE
+================================ */
+
+.menu-toggle {
+  display: none;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--text);
+
+  font-size: 1.8rem;
+
+  cursor: pointer;
+
+  padding: 5px;
+
+  line-height: 1;
+}
+
+
+/* ================================
+   MENU MOBILE
+================================ */
+
+.mobile-nav {
+  display: none;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+  width: min(1250px, 90%);
+
+  min-height: min(720px, calc(100vh - 80px));
+
+  margin: 20px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: clamp(35px, 5vw, 80px);
+
+  align-items: center;
+}
+
+.eyebrow {
+  color: var(--accent);
+
+  font-size: clamp(.68rem, .8vw, .82rem);
+
+  font-weight: 600;
+
+  letter-spacing: .18em;
+
+  margin-bottom: 14px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Cormorant Garamond', serif;
+
+  line-height: 1.05;
+}
+
+h1 {
+  font-size: clamp(3.2rem, 5.8vw, 6.5rem);
+
+  max-width: 850px;
+}
+
+h2 {
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 1.8vw, 1.9rem);
+}
+
+.hero-text {
+  color: var(--muted);
+
+  max-width: 600px;
+
+  margin: 28px 0;
+
+  font-size: clamp(.95rem, 1vw, 1.1rem);
+}
+
+.buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+
+/* ================================
+   FOTO PRINCIPAL
+================================ */
+
+.hero-image {
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: clamp(22px, 2vw, 32px);
+
+  box-shadow:
+    0 25px 60px rgba(70, 55, 40, .15);
+}
+
+.hero-image img {
+  width: 100%;
+
+  height: clamp(430px, 52vw, 620px);
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* ================================
+   SEÇÕES
+================================ */
+
+.section {
+  width: min(1250px, 90%);
+
+  margin: clamp(60px, 7vw, 100px) auto;
+
+  padding: clamp(30px, 4vw, 55px) 0;
+}
+
+
+/* ================================
+   SOBRE
+================================ */
+
+.about {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: clamp(40px, 6vw, 90px);
+
+  border-top: 1px solid var(--line);
+
+  border-bottom: 1px solid var(--line);
+}
+
+.about p {
+  color: var(--muted);
+
+  margin-bottom: 18px;
+
+  font-size: clamp(.92rem, 1vw, 1.05rem);
+}
+
+.placeholder {
+  padding: 18px;
+
+  background: var(--paper);
+
+  border-left: 3px solid var(--accent);
+}
+
+
+/* ================================
+   TÍTULO DOS SERVIÇOS
+================================ */
+
+.section-heading {
+  max-width: 800px;
+
+  margin-bottom: clamp(30px, 4vw, 50px);
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+
+  margin-top: 18px;
+
+  font-size: clamp(.92rem, 1vw, 1.05rem);
+}
+
+
+/* ================================
+   IMAGENS DOS CARDS
+================================ */
+
+.card-image {
+  width: 100%;
+
+  height: clamp(110px, 9vw, 140px);
+
+  object-fit: cover;
+
+  display: block;
+
+  margin-bottom: 12px;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.cards {
+  display: flex;
+
+  gap: clamp(15px, 2vw, 25px);
+
+  overflow-x: auto;
+
+  padding: 20px 5px 30px;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+}
+
+.card {
+  flex: 0 0 clamp(210px, 18vw, 260px);
+
+  min-height: clamp(350px, 32vw, 400px);
+
+  background: var(--paper);
+
+  padding: clamp(18px, 1.7vw, 24px);
+
+  border: 1px solid var(--line);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+
+  box-shadow:
+    0 20px 40px rgba(70, 55, 40, 0.15);
+}
+
+.number {
+  color: var(--accent);
+
+  font-size: .8rem;
+
+  letter-spacing: .15em;
+}
+
+.card h3 {
+  margin: 15px 0 10px;
+}
+
+.card p {
+  color: var(--muted);
+
+  font-size: clamp(.82rem, .85vw, .95rem);
+}
+
+
+/* ================================
+   BOTÃO DOS CARDS
+================================ */
+
+.card-button {
+  display: inline-block;
+
+  margin-top: auto;
+
+  padding: 10px 14px;
+
+  background: var(--accent);
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  font-size: clamp(.75rem, .8vw, .85rem);
+
+  text-align: center;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.card-button:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.85;
+}
+
+
+/* ================================
+   ESPAÇO
+================================ */
+
+.space-box {
+  min-height: clamp(380px, 42vw, 520px);
+
+  display: flex;
+
+  align-items: flex-end;
+
+  background:
+    linear-gradient(
+      120deg,
+      #c8b9a8,
+      #eee6dc
+    );
+
+  padding: clamp(25px, 4vw, 60px);
+}
+
+.space-content {
+  width: min(600px, 100%);
+
+  background:
+    rgba(255, 253, 249, .92);
+
+  padding: clamp(25px, 3vw, 40px);
+}
+
+.space-content p:last-child {
+  color: var(--muted);
+}
+
+
+/* ================================
+   CONTATO
+================================ */
+
+.contact {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: clamp(40px, 6vw, 90px);
+
+  background: var(--paper);
+
+  padding: clamp(40px, 5vw, 75px);
+}
+
+.contact-info p {
+  margin-bottom: 22px;
+}
+
+.contact-info strong {
+  color: var(--accent-dark);
+}
+
+
+/* ================================
+   RODAPÉ
+================================ */
+
+footer {
+  text-align: center;
+
+  padding: clamp(25px, 3vw, 40px);
+
+  border-top: 1px solid var(--line);
+
+  color: var(--muted);
+
+  font-size: .85rem;
+}
+
+
+/* =========================================================
+   TELAS MÉDIAS
+   NOTEBOOKS E TABLETS GRANDES
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .side-photo {
+    width: 27%;
+  }
+
+  .header,
+  main,
+  footer {
+    margin-left: 27%;
+
+    width: 73%;
+  }
+
+  .header {
+    padding: 0 25px;
+  }
+
+  .desktop-nav {
+    gap: 15px;
+
+    font-size: .8rem;
+  }
+
+  .header-button {
+    padding: 10px 14px;
+
+    font-size: .78rem;
+  }
+
+  .hero {
+    width: 90%;
+
+    gap: 35px;
+
+    min-height: auto;
+
+    padding: 45px 0;
+  }
+
+  .hero-image img {
+    height: 480px;
+  }
+
+  .about,
+  .contact {
+    gap: 40px;
+  }
+}
+
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .side-photo {
+    width: 22%;
+  }
+
+  .header,
+  main,
+  footer {
+    margin-left: 22%;
+
+    width: 78%;
+  }
+
+  .header {
+    padding: 15px 20px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    width: 90%;
+
+    gap: 40px;
+
+    padding: 55px 0;
+  }
+
+  .hero-content {
+    padding-right: 0;
+  }
+
+  .hero-image img {
+    height: 460px;
+  }
+
+  .about,
+  .contact {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .section {
+    width: 90%;
+  }
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* FOTO LATERAL */
+
+  .side-photo {
+    display: none;
+  }
+
+
+  /* TELA TODA */
+
+  .header,
+  main,
+  footer {
+    margin-left: 0;
+
+    width: 100%;
+  }
+
+
+  /* CABEÇALHO */
+
+  .header {
+    min-height: 70px;
+
+    padding: 15px 20px;
+
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 1.7rem;
+  }
+
+  .header > a:not(.logo):not(.header-button) {
+    display: none;
+  }
+
+  .header-button {
+    margin-left: auto;
+
+    padding: 9px 15px;
+
+    font-size: .78rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+
+  /* MENU MOBILE */
+
+  .mobile-nav {
+    display: none;
+
+    position: relative;
+
+    z-index: 20;
+
+    width: 100%;
+
+    background: var(--paper);
+
+    border-top: 1px solid var(--line);
+
+    border-bottom: 1px solid var(--line);
+
+    padding: 10px 20px;
+  }
+
+  .mobile-nav.active {
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .mobile-nav a {
+    padding: 13px 5px;
+
+    border-bottom: 1px solid var(--line);
+
+    font-size: .9rem;
+  }
+
+  .mobile-nav a:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav a:hover {
+    color: var(--accent);
+  }
+
+
+  /* HERO */
+
+  .hero {
+    width: 90%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+
+    padding: 55px 0;
+
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    padding-right: 0;
+  }
+
+
+  /* TÍTULOS */
+
+  h1 {
+    font-size: clamp(
+      2.8rem,
+      12vw,
+      4.5rem
+    );
+  }
+
+  h2 {
+    font-size: clamp(
+      2.4rem,
+      10vw,
+      3.5rem
+    );
+  }
+
+
+  /* TEXTO */
+
+  .hero-text {
+    font-size: .95rem;
+
+    margin: 22px 0;
+  }
+
+
+  /* BOTÕES */
+
+  .buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .button {
+    text-align: center;
+
+    width: 100%;
+  }
+
+
+  /* FOTO PRINCIPAL */
+
+  .hero-image {
+    width: 100%;
+
+    border-radius: 22px;
+  }
+
+  .hero-image img {
+    height: 400px;
+  }
+
+
+  /* SEÇÕES */
+
+  .section {
+    width: 90%;
+
+    margin: 40px auto;
+
+    padding: 45px 0;
+  }
+
+
+  /* SOBRE */
+
+  .about {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+
+  /* SERVIÇOS */
+
+  .section-heading {
+    margin-bottom: 25px;
+  }
+
+  .cards {
+    display: flex;
+
+    overflow-x: auto;
+
+    gap: 15px;
+
+    padding: 15px 3px 25px;
+  }
+
+  .card {
+    flex: 0 0 245px;
+
+    min-height: 370px;
+  }
+
+
+  /* ESPAÇO */
+
+  .space-box {
+    min-height: 380px;
+
+    padding: 25px;
+  }
+
+  .space-content {
+    padding: 25px;
+  }
+
+
+  /* CONTATO */
+
+  .contact {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+
+    padding: 45px 25px;
+  }
+
+
+  /* RODAPÉ */
+
+  footer {
+    padding: 30px 20px;
+  }
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .header {
+    padding: 12px 15px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .header-button {
+    padding: 8px 12px;
+
+    font-size: .72rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.6rem;
+  }
+
+  .hero {
+    padding: 40px 0;
+  }
+
+  h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero-image img {
+    height: 330px;
+  }
+
+  .card {
+    flex: 0 0 230px;
+  }
+}
